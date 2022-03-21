@@ -1,0 +1,91 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>MIA-203?/??/??</title>
+<script src="aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+top: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
+</div>
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href="https://haoyuwang93.github.io/anotherfuture/c.office.html"><button class="button">CONCEPT</button></a>
+</div>
+
+</head>
+
+<body>
+
+<script>
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+
+  <a-assets>
+    <img id="sky" src="images/door.jpg" alt="background">
+    <img id="home" src="images/backhome.png" alt="">
+    <img id="circle" src="images/circle.png" alt="">
+  </a-assets>
+
+  <a-sky src="#sky" rotation="0 180 0"></a-sky>
+
+   <a-image id="back" class="clickable"
+      src= "#home"
+      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
+      width="0.12" height="0.12"
+      position="-0.13 1.5 0.5"
+      rotation="0 180 0"
+      opacity=0.8
+      weblink="url: index.html">
+    </a-image>
+
+    <a-image id="2-0" class="clickable"
+       src="#circle" width="1.5" height="1.5" opacity="1"
+       animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+       animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+       position="6 0 -0.2"
+       rotation="-90 0 0"
+       weblink="url: 2-0.html">
+     </a-image>
+
+     <a-image id="10-0" class="clickable"
+        src="#circle" width="2.2" height="2.2" opacity="1"
+        animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+        animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+        position="-14 0 0"
+        rotation="-90 0 0"
+        weblink="url: 10-0.html">
+      </a-image>
+
+</a-scene>
+
+</body>
+</html
