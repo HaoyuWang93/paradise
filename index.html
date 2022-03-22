@@ -2,90 +2,81 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <title>MIA-203?/??/??</title>
-<script src="aframe/aframe.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<link rel="stylesheet" href="css/custom.css">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nomadic Paradise</title>
+  <meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
 
-<div style='position: fixed;
-top: 15px;
-left: 20px;
-width:100%;
-text-align: left;
-z-index: 1;'>
-  <a href="https://haoyuwang93.github.io/anotherfuture/"><button class="button">HOME</button></a>
-</div>
 
-<div style='position: fixed;
-bottom: 15px;
-left: 20px;
-width:100%;
-text-align: left;
-z-index: 1;'>
-  <a href="https://haoyuwang93.github.io/anotherfuture/c.office.html"><button class="button">CONCEPT</button></a>
-</div>
+		<!-- Wrapper -->
+			<div id="wrapper">
+				<img class="image main" src="images/float.png" alt=""></img>
 
-</head>
+				<!-- Header -->
+					<header id="header">
+						<div class="inner"></div>
 
-<body>
+					<!-- Main -->
+						<div id="main">
+							<div class="inner"
+							style="padding: 30px; max-width: 1400px; margin: auto;">
+								<header>
+									<h1>Nomadic Paradise: Chasing the Flooded Pasts</h1>
+									<p>Nomadic paradise is a VR-enabled interactive architectural fiction to be hosted online and at public art events in California.
+                    The project speculates future coastal migrations under extreme sea-level rises, where nomads of an aquatic generation roam across
+                    seas and build floating paradises based on their imaginary homeland. When entering the first-person VR scene, audiences will find
+                    themselves on a nomad unit: a floating architectural printer that can build inhabitable structures from extracted coral reefs and
+                    sea sand. The audiences can navigate the unit in search of extractable materials, print various designs to program their unit,
+                    and dock with other units on their ways to shape a nomadic paradise of preferred compositions. Depending on the routes of choice,
+                    this interactive VR journey may encounter ruins of insular towns, extreme weathers with tsunamis, and some random paradises
+                    imitating the flooded landmarks of Miami, Lagos, Shanghai, Dhaka, and Tokyo.
+                    <br><br>
+                    The project is part of my developing art genre of architectural fiction that takes speculative design to address challenges, raise
+                    awareness, and provoke discussion on the risks and uncertainties of contemporary human conditions. It is expected to launch by the
+                    end of 2022, both online with mobile and desktop access supported by Web-VR and at relevant Californian public events with VR devices
+                    available. In addition, I plan to push the idea further into a multiplayer gaming experience of post-sea-level-rise scenarios that
+                    could draw broader public engagement on the technological and environmental agendas between humanity and the sea.
+                    <br><br>
+                    While the project is in early stage of development, you can check out the Web-VR mockup scene below by moving/tapping on your phone
+                    or dragging/ clicking on desktop.
+										</p>
+    								<a href="1.html"><button style="margin: 0 auto; display: block;">Web-VR MOCKUP SCENE</button></a>
+                    <br><br>
+                    <h1 style="text-align: center; margin: auto">Concept Design</h1>
+                  <img class="image vertical" src="images/design1.png" alt=""></img><br>
+                  <img class="image vertical" src="images/design2.png" alt=""></img><br>
+                  <img class="image main" src="images/app.jpg" alt=""></img><br>
+                <img class="image vertical" src="images/poem.png" alt=""></img><br>
+                <img class="image vertical" src="images/type.png" alt=""></img><br>
+              </header>
+							<br><br><br>
+              <p style="text-align:center">Haoyu Wang is an architect and urbanist based in SF Bay Area.
+                <br>He is interested in pushing a artistic genre of architectural fiction that
+                renders unreal tomorrows to inform today's challenges.</p>
+								<a href="https://haoyuwang93.github.io/portfolio/"><button style="margin: 0 auto; display: block;">Portfolio of Haoyu Wang</button></a>
+							</div>
+						</div>
 
-<script>
-  AFRAME.registerComponent("weblink", {
-  schema: {
-    url: {
-      default: ""
-    }
-  },
-  init: function() {
-    this.el.addEventListener("click", (e) => {
-      window.location = this.data.url;
-    })
-  }
-})
-</script>
+					<!-- Footer -->
+					<footer id="footer">
+						<ul class="inner"
+						style="text-align:center; padding:30px;">
+							<ul class="copyright">
+								<li>&copy; Haoyu Wang, 2022. All rights reserved</li>
+							</ul>
+						</div>
+					</footer>
 
-<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
-loading-screen="dotsColor: white; backgroundColor: black">
 
-  <a-assets>
-    <img id="sky" src="images/door.jpg" alt="background">
-    <img id="home" src="images/backhome.png" alt="">
-    <img id="circle" src="images/circle.png" alt="">
-  </a-assets>
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
 
-  <a-sky src="#sky" rotation="0 180 0"></a-sky>
-
-   <a-image id="back" class="clickable"
-      src= "#home"
-      animation__flash="property: opacity; from: 1; to: 0; dur: 600; dir: alternate; loop: true"
-      width="0.12" height="0.12"
-      position="-0.13 1.5 0.5"
-      rotation="0 180 0"
-      opacity=0.8
-      weblink="url: index.html">
-    </a-image>
-
-    <a-image id="2-0" class="clickable"
-       src="#circle" width="1.5" height="1.5" opacity="1"
-       animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
-       animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-       position="6 0 -0.2"
-       rotation="-90 0 0"
-       weblink="url: 2-0.html">
-     </a-image>
-
-     <a-image id="10-0" class="clickable"
-        src="#circle" width="2.2" height="2.2" opacity="1"
-        animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
-        animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-        position="-14 0 0"
-        rotation="-90 0 0"
-        weblink="url: 10-0.html">
-      </a-image>
-
-</a-scene>
-
-</body>
-</html
+	</body>
+</html>
