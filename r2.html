@@ -1,0 +1,83 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>2062/03/21</title>
+<script src="assets/aframe/aframe.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="assets/css/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href=index.html><button class="button">HOME</button></a>
+</div>
+
+</head>
+
+<body>
+
+<script>
+AFRAME.registerComponent("enter0", {
+  init: function() {
+     var pieces = document.querySelectorAll(".act, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show0")}
+     }, {once: true})
+   }
+})
+
+  AFRAME.registerComponent("weblink", {
+  schema: {
+    url: {
+      default: ""
+    }
+  },
+  init: function() {
+    this.el.addEventListener("click", (e) => {
+      window.location = this.data.url;
+    })
+  }
+})
+</script>
+
+<a-scene raycaster="objects: .clickable" cursor="rayOrigin: mouse; fuse:false"
+loading-screen="dotsColor: white; backgroundColor: black">
+<a-camera wasd-controls-enabled="false"></a-camera>
+
+  <a-assets>
+    <img id="sky" src="images/r2.jpg" alt="background">
+    <img id="circle" src="images/circle.png" alt="">
+    <img id="arrow" src="images/arrow.png" alt="">
+  </a-assets>
+
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+
+  <a-image id="r1" class="clickable"
+     src="#circle" width="0.8" height="0.8" opacity="1"
+     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+     position="0 0 -3.2"
+     rotation="-90 0 0"
+     weblink="url: r1.html">
+  </a-image>
+
+  <a-image id="r3" class="clickable"
+     src="#arrow" width="0.5" height="0.5" opacity="1"
+     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+     position="0 1.5 1"
+     rotation="0 180 0"
+     weblink="url: r3.html">
+  </a-image>
+
+</a-scene>
+
+</body>
+</html
