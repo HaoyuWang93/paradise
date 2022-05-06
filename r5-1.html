@@ -52,38 +52,37 @@ loading-screen="dotsColor: white; backgroundColor: black">
 <a-camera wasd-controls-enabled="false"></a-camera>
 
   <a-assets>
-    <img id="sky" src="images/r3.jpg" alt="background">
+    <img id="sky" src="images/r51.jpg" alt="background">
     <img id="circle" src="images/circle.png" alt="">
-    <img id="arrow" src="images/arrow.png" alt="">
   </a-assets>
 
-  <a-sky src="#sky" rotation="0 -45 0"></a-sky>
+  <a-sky src="#sky" rotation="0 0 0"></a-sky>
 
-  <a-image id="r2" class="clickable"
-     src="#arrow" width="0.4" height="0.5" opacity="1"
+  <a-image id="r4-1" class="clickable"
+     src="#circle" width="1.5" height="1.5" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="0 0.5 1"
-     rotation="0 180 0"
-     weblink="url: r2.html">
+     position="0.5 0 -6"
+     rotation="-90 0 0"
+     weblink="url: r4-1.html">
   </a-image>
 
-  <a-image id="r4" class="clickable"
-     src="#circle" width="1" height="1" opacity="1"
+  <a-image id="r6-1" class="clickable"
+     src="#circle" width="1.7" height="1.7" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="3.5 0 -2"
+     position="-8 0 0"
      rotation="-90 0 0"
-     weblink="url: r4.html">
+     weblink="url: r6-1.html">
   </a-image>
 
-  <a-image id="r7" class="clickable"
-     src="#circle" width="1" height="1" opacity="0.35"
+  <a-image id="rt" class="clickable"
+     src="#circle" width="1.7" height="1.7" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="1.5 0 4"
-     rotation="-90 0 0"
-     weblink="url: r7.html">
+     position="-6 3.5 -7"
+     rotation="0 45 0"
+     weblink="url: rt.html">
   </a-image>
 
 </a-scene>
