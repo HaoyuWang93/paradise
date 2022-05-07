@@ -9,15 +9,6 @@
 <link rel="stylesheet" href="assets/css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div style='position: fixed;
-bottom: 15px;
-left: 20px;
-width:100%;
-text-align: left;
-z-index: 1;'>
-  <a href=index.html><button class="button">HOME</button></a>
-</div>
-
 </head>
 
 <body>
@@ -52,28 +43,28 @@ loading-screen="dotsColor: white; backgroundColor: black">
 <a-camera wasd-controls-enabled="false"></a-camera>
 
   <a-assets>
-    <img id="sky" src="images/r61.jpg" alt="background">
+    <img id="sky" src="images/d3.jpg" alt="background">
     <img id="circle" src="images/circle.png" alt="">
   </a-assets>
 
-  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
+  <a-sky src="#sky" rotation="0 -45 0"></a-sky>
 
-  <a-image id="r5-1" class="clickable"
-     src="#circle" width="1.7" height="1.7" opacity="1"
+  <a-image id="d4" class="clickable"
+     src="#circle" width="2" height="2" opacity="1"
+     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+     position="-6 0 -6"
+     rotation="-90 0 0"
+     weblink="url: d4.html">
+  </a-image>
+
+  <a-image id="d2" class="clickable"
+     src="#circle" width="1.5" height="1.5" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
      position="0 0 7"
      rotation="-90 0 0"
-     weblink="url: r5-1.html">
-  </a-image>
-
-  <a-image id="r7-1" class="clickable"
-     src="#circle" width="1.2" height="1.2" opacity="1"
-     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
-     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="5 0 -1.2"
-     rotation="-90 0 0"
-     weblink="url: r7-1.html">
+     weblink="url: d2.html">
   </a-image>
 
 </a-scene>

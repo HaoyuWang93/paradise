@@ -22,7 +22,22 @@ z-index: 1;'>
 
 <body>
 
-<script>
+  <div id="preload">
+    <p id="intro">
+        Printing in Progress<br>
+        Please Keep away from the print bed
+    </p>
+  </div>
+
+  <script>
+  window.addEventListener("load", function(){
+      setInterval(pippo, 2500);
+  });
+  function pippo(){
+      var load_screen = document.getElementById("preload");
+      document.body.removeChild(load_screen);
+  }
+
 AFRAME.registerComponent("enter0", {
   init: function() {
      var pieces = document.querySelectorAll(".act, .clickable")
@@ -56,13 +71,13 @@ loading-screen="dotsColor: white; backgroundColor: black">
     <img id="circle" src="images/circle.png" alt="">
   </a-assets>
 
-  <a-sky src="#sky" rotation="0 180 0"></a-sky>
+  <a-sky src="#sky" rotation="0 -90 0"></a-sky>
 
   <a-image id="r5-1" class="clickable"
      src="#circle" width="1.5" height="1.5" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="0 0 -6"
+     position="-6 0 0"
      rotation="-90 0 0"
      weblink="url: r5-1.html">
   </a-image>
@@ -71,7 +86,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
      src="#circle" width="1.25" height="1.25" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="5 0 3"
+     position="3 0 -5"
      rotation="-90 0 0"
      weblink="url: r7-1.html">
   </a-image>
@@ -80,8 +95,8 @@ loading-screen="dotsColor: white; backgroundColor: black">
      src="#circle" width="1" height="1" opacity="1"
      animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
-     position="5 2.3 -2"
-     rotation="0 -45 0"
+     position="-2 2.5 -5"
+     rotation="0 45 0"
      weblink="url: rt.html">
   </a-image>
 

@@ -9,20 +9,26 @@
 <link rel="stylesheet" href="assets/css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<div style='position: fixed;
-bottom: 15px;
-left: 20px;
-width:100%;
-text-align: left;
-z-index: 1;'>
-  <a href=index.html><button class="button">HOME</button></a>
-</div>
-
 </head>
 
 <body>
 
-<script>
+  <div id="preload">
+    <p id="intro">
+        Docking...<br>
+        Mind the Gap
+    </p>
+  </div>
+
+      <script>
+      window.addEventListener("load", function(){
+          setInterval(pippo, 2500);
+      });
+      function pippo(){
+          var load_screen = document.getElementById("preload");
+          document.body.removeChild(load_screen);
+      }
+
 AFRAME.registerComponent("enter0", {
   init: function() {
      var pieces = document.querySelectorAll(".act, .clickable")
@@ -74,6 +80,15 @@ loading-screen="dotsColor: white; backgroundColor: black">
      position="-5 0 0"
      rotation="-90 0 0"
      weblink="url: dr6.html">
+  </a-image>
+
+  <a-image id="drt" class="clickable"
+     src="#circle" width="1.25" height="1.25" opacity="0.8"
+     animation__flash="property: opacity; to: 0; dur: 600; dir: alternate; loop: true"
+     animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
+     position="-0.5 2.5 4"
+     rotation="0 0 0"
+     weblink="url: drt.html">
   </a-image>
 
 </a-scene>
