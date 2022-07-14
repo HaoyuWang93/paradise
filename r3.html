@@ -9,18 +9,47 @@
 <link rel="stylesheet" href="assets/css/custom.css">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
+<div style='position: fixed;
+bottom: 15px;
+left: 20px;
+width:100%;
+text-align: left;
+z-index: 1;'>
+  <a href=index.html><button class="button">HOME</button></a>
+</div>
+
 </head>
 
 <body>
 
 <script>
-AFRAME.registerComponent("enter0", {
+AFRAME.registerComponent("proc0", {
   init: function() {
-     var pieces = document.querySelectorAll(".act, .clickable")
+     var pieces = document.querySelectorAll(".info, .clickable")
      this.el.addEventListener("click", e => {
        for (let piece of pieces) {
          piece.emit("show0")}
-     }, {once: true})
+     })
+   }
+})
+
+AFRAME.registerComponent("proc1", {
+  init: function() {
+     var pieces = document.querySelectorAll(".info, .clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show1")}
+     })
+   }
+})
+
+AFRAME.registerComponent("proc2", {
+  init: function() {
+     var pieces = document.querySelectorAll(".clickable")
+     this.el.addEventListener("click", e => {
+       for (let piece of pieces) {
+         piece.emit("show2")}
+     })
    }
 })
 
@@ -46,6 +75,9 @@ loading-screen="dotsColor: white; backgroundColor: black">
     <img id="sky" src="images/r3.jpg" alt="background">
     <img id="circle" src="images/circle.png" alt="">
     <img id="arrow" src="images/arrow.png" alt="">
+    <img id="app1" src="images/app1.jpg" alt="">
+    <img id="app2" src="images/app2.jpg" alt="">
+    <img id="app3" src="images/app3.jpg" alt="">
   </a-assets>
 
   <a-sky src="#sky" rotation="0 -45 0"></a-sky>
@@ -66,6 +98,33 @@ loading-screen="dotsColor: white; backgroundColor: black">
      position="3.5 0 -2"
      rotation="-90 0 0"
      weblink="url: r4.html">
+  </a-image>
+
+  <a-image id="app1" class="clickable"
+    src="#app1" width="1" height="2.1" rotation="0 45 0"
+    position="-1 1.6 -1" opacity="0.7" scale="1"
+    animation__flash="property: opacity; to: 0.5; dur: 600; dir: alternate; loop: true"
+    animation__show2="startEvents: show2; property: scale; to: 1; dur: 200"
+    animation__hide0="startEvents: show0; property: scale; to: 0; dur: 200"
+    proc0>
+  </a-image>
+
+  <a-image id="app2" class="clickable"
+    src="#app2" width="1" height="2.1" rotation="0 45 0"
+    position="-1 1.6 -1" opacity="0.7" scale="0"
+    animation__flash="property: opacity; to: 0.5; dur: 600; dir: alternate; loop: true"
+    animation__show0="startEvents: show0; property: scale; to: 1; dur: 200"
+    animation__hide1="startEvents: show1; property: scale; to: 0; dur: 200"
+    proc1>
+  </a-image>
+
+  <a-image id="app3" class="clickable"
+    src="#app3" width="1" height="2.1" rotation="0 45 0"
+    position="-1 1.6 -1" opacity="0.7" scale="0"
+    animation__flash="property: opacity; to: 0.5; dur: 600; dir: alternate; loop: true"
+    animation__show1="startEvents: show1; property: scale; to: 1; dur: 200"
+    animation__hide2="startEvents: show2; property: scale; to: 0; dur: 200"
+    proc2>
   </a-image>
 
 </a-scene>

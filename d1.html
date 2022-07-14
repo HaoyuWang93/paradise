@@ -29,16 +29,6 @@
           document.body.removeChild(load_screen);
       }
 
-AFRAME.registerComponent("enter0", {
-  init: function() {
-     var pieces = document.querySelectorAll(".act, .clickable")
-     this.el.addEventListener("click", e => {
-       for (let piece of pieces) {
-         piece.emit("show0")}
-     }, {once: true})
-   }
-})
-
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {

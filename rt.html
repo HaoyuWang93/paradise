@@ -14,16 +14,6 @@
 <body>
 
 <script>
-AFRAME.registerComponent("enter0", {
-  init: function() {
-     var pieces = document.querySelectorAll(".act, .clickable")
-     this.el.addEventListener("click", e => {
-       for (let piece of pieces) {
-         piece.emit("show0")}
-     }, {once: true})
-   }
-})
-
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -45,7 +35,6 @@ loading-screen="dotsColor: white; backgroundColor: black">
   <a-assets>
     <img id="sky" src="images/rt.jpg" alt="background">
     <img id="circle" src="images/circle.png" alt="">
-    <img id="print" src="images/print.png" alt="">
   </a-assets>
 
   <a-sky src="#sky" rotation="0 -90 0"></a-sky>

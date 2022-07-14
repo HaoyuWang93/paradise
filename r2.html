@@ -14,16 +14,6 @@
 <body>
 
 <script>
-AFRAME.registerComponent("enter0", {
-  init: function() {
-     var pieces = document.querySelectorAll(".act, .clickable")
-     this.el.addEventListener("click", e => {
-       for (let piece of pieces) {
-         piece.emit("show0")}
-     }, {once: true})
-   }
-})
-
   AFRAME.registerComponent("weblink", {
   schema: {
     url: {
@@ -56,7 +46,7 @@ loading-screen="dotsColor: white; backgroundColor: black">
      animation__zoom="property: scale; to: 0.8 0.8; dur: 600; dir: alternate; loop: true"
      position="0 0 3.2"
      rotation="-90 0 0"
-     weblink="url: r1.html">
+     weblink="url: index.html">
   </a-image>
 
   <a-image id="r3" class="clickable"
